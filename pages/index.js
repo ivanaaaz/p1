@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import MemList from '../components/MemList';
 
 export const members = [
   {
@@ -23,14 +22,6 @@ export const members = [
   { id: 'm4', name: 'Zika Zikic', email: 'zika@gmail.com' },
 ];
 
-/*export default function Home() {
- return(<ul>
-   <li><p>{members[0].name}</p></li>
-   <li><p>{members[1].name}</p></li>
-   <li><p>{members[2].name}</p></li>
-   </ul>)
-    }*/
-
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -42,8 +33,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Members</h1>
-
-        <MemList />
 
         <div className={styles.grid}>
           <Link href={'/members/' + members[0].id} key={members[0].id}>
