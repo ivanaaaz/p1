@@ -6,7 +6,7 @@ import Link from 'next/link'
 import MemList from '../components/MemList';
 import Member from '../components/Member';
 
-let members = [
+export const members = [
   {
     "id": 'm1',
     "name": 'Pera Peric',
@@ -55,28 +55,28 @@ export default function Home() {
        <MemList />
 
         <div className={styles.grid}>
-          <Link href={"/members/" + members[0].id}>
+          <Link href={"/members/" + members[0].id} key={members[0].id}>
           <a className={styles.card}>
           <h2>1</h2>
             <p> {members[0].name} </p>
           </a>
           </Link>
 
-          <Link href={"/members/" + members[1].id}>
+          <Link href={"/members/" + members[1].id} key={members[1].id}>
           <a className={styles.card}>
             <h2>2</h2>
             <p>{members[1].name}</p>
           </a>
             </Link>
 
-            <Link href={"/members/" + members[2].id}>
+            <Link href={"/members/" + members[2].id} key={members[2].id}>
           <a className={styles.card}>
             <h2>3</h2>
             <p>{members[2].name}</p>
           </a>
           </Link>
 
-          <Link href={"/members/" + members[3].id}>
+          <Link href={"/members/" + members[3].id} key={members[3].id}>
           <a className={styles.card}>
             <h2>4</h2>
             <p>
@@ -94,3 +94,4 @@ export default function Home() {
     </div>
   )
 }
+
