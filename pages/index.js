@@ -1,34 +1,27 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import React, { useState } from "react";
-import Link from 'next/link'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import React, { useState } from 'react';
+import Link from 'next/link';
 import MemList from '../components/MemList';
-import Member from '../components/Member';
 
 export const members = [
   {
-    "id": 'm1',
-    "name": 'Pera Peric',
-    "email": 'pera@gmail.com'
+    id: 'm1',
+    name: 'Pera Peric',
+    email: 'pera@gmail.com',
   },
   {
-    "id": 'm2',
-    "name": 'Marko Markovic',
-    "email": "marko@gmail.com"    
+    id: 'm2',
+    name: 'Marko Markovic',
+    email: 'marko@gmail.com',
   },
   {
-    "id": 'm3',
-    "name": 'Ivan Ivanovic',
-    "email": 'ivan@gmail.com'  
+    id: 'm3',
+    name: 'Ivan Ivanovic',
+    email: 'ivan@gmail.com',
   },
- { "id": 'm4',
-   "name": 'Zika Zikic',
-    "email": 'zika@gmail.com'  
-}
+  { id: 'm4', name: 'Zika Zikic', email: 'zika@gmail.com' },
 ];
-
-
 
 /*export default function Home() {
  return(<ul>
@@ -39,7 +32,7 @@ export const members = [
     }*/
 
 export default function Home() {
-    return (
+  return (
     <div className={styles.container}>
       <Head>
         <title>Ivanaaa</title>
@@ -48,50 +41,42 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Members
-        </h1>
+        <h1 className={styles.title}>Members</h1>
 
-       <MemList />
+        <MemList />
 
         <div className={styles.grid}>
-          <Link href={"/members/" + members[0].id} key={members[0].id}>
-          <a className={styles.card}>
-          <h2>1</h2>
-            <p> {members[0].name} </p>
-          </a>
-          </Link>
-
-          <Link href={"/members/" + members[1].id} key={members[1].id}>
-          <a className={styles.card}>
-            <h2>2</h2>
-            <p>{members[1].name}</p>
-          </a>
-            </Link>
-
-            <Link href={"/members/" + members[2].id} key={members[2].id}>
-          <a className={styles.card}>
-            <h2>3</h2>
-            <p>{members[2].name}</p>
-          </a>
-          </Link>
-
-          <Link href={"/members/" + members[3].id} key={members[3].id}>
-          <a className={styles.card}>
-            <h2>4</h2>
-            <p>
-              {members[3].name}
-            </p>
+          <Link href={'/members/' + members[0].id} key={members[0].id}>
+            <a className={styles.card}>
+              <h2>1</h2>
+              <p> {members[0].name} </p>
             </a>
-            </Link>
+          </Link>
+
+          <Link href={'/members/' + members[1].id} key={members[1].id}>
+            <a className={styles.card}>
+              <h2>2</h2>
+              <p>{members[1].name}</p>
+            </a>
+          </Link>
+
+          <Link href={'/members/' + members[2].id} key={members[2].id}>
+            <a className={styles.card}>
+              <h2>3</h2>
+              <p>{members[2].name}</p>
+            </a>
+          </Link>
+
+          <Link href={'/members/' + members[3].id} key={members[3].id}>
+            <a className={styles.card}>
+              <h2>4</h2>
+              <p>{members[3].name}</p>
+            </a>
+          </Link>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-         
-        
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
-  )
+  );
 }
-
