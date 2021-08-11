@@ -2,24 +2,37 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import photo1 from '../public/1.jpg';
+import photo2 from '../public/2.png';
+import photo3 from '../public/3.png';
+import photo4 from '../public/4.png';
 
 export const members = [
   {
     id: 'm1',
     name: 'Pera Peric',
     email: 'pera@gmail.com',
+    image: <Image src={photo1} alt="Photo of Pera" />
   },
   {
     id: 'm2',
     name: 'Marko Markovic',
     email: 'marko@gmail.com',
+    image: <Image src={photo2} alt="Photo of Marko" />
   },
   {
     id: 'm3',
     name: 'Ivan Ivanovic',
     email: 'ivan@gmail.com',
+    image: <Image src={photo3} alt="Photo of Ivan" />
   },
-  { id: 'm4', name: 'Zika Zikic', email: 'zika@gmail.com' },
+  { id: 'm4', name: 'Zika Zikic', email: 'zika@gmail.com',
+  image: <Image src={photo4} alt="Photo of Zika" />
+
+
+  
+ }
 ];
 
 export default function Home() {
