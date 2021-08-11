@@ -10,29 +10,31 @@ import photo4 from '../public/4.png';
 
 export const members = [
   {
-    id: 'm1',
+    id: "m1",
     name: 'Pera Peric',
     email: 'pera@gmail.com',
-    image: <Image src={photo1} alt="Photo of Pera" />
+   // image: <Image src={photo1} alt="Photo of Pera" />
+
+
+
   },
   {
     id: 'm2',
     name: 'Marko Markovic',
     email: 'marko@gmail.com',
-    image: <Image src={photo2} alt="Photo of Marko" />
+   // image: <Image src={photo2} alt="Photo of Marko" />
   },
   {
     id: 'm3',
     name: 'Ivan Ivanovic',
     email: 'ivan@gmail.com',
-    image: <Image src={photo3} alt="Photo of Ivan" />
+   // image: <Image src={photo3} alt="Photo of Ivan" />
   },
-  { id: 'm4', name: 'Zika Zikic', email: 'zika@gmail.com',
-  image: <Image src={photo4} alt="Photo of Zika" />
-
-
-  
- }
+  { id: 'm4',
+  name: 'Zika Zikic',
+  email: 'zika@gmail.com',
+  //image: <Image src={photo4} alt="Photo of Zika" />
+  }
 ];
 
 export default function Home() {
@@ -51,7 +53,10 @@ export default function Home() {
           <Link href={'/members/' + members[0].id} key={members[0].id}>
             <a className={styles.card}>
               <h2>1</h2>
-              <p> {members[0].name} </p>
+              <p> {members[0].name} 
+              
+              
+                        </p>
             </a>
           </Link>
 
