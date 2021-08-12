@@ -2,11 +2,11 @@ import Link from 'next/link';
 import styles from './index.module.css';
 const Navbar = () => {
   return (
-    <div>
+    <header>
       <Link href="/">
         <a className={styles.wrapper}>Home</a>
       </Link>
-    </div>
+    </header>
   );
 };
 
