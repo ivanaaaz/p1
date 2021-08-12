@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { members } from '../mocks';
+import MemberList from '../components/MemberList';
 
 const Home = () => {
   return (
@@ -15,32 +16,7 @@ const Home = () => {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>Members</h1>
-        <div className={styles.grid}>
-          <Link href={'/members/' + members[0].id} key={members[0].id}>
-            <a className={styles.card}>
-              <h2>1</h2>
-              <p> {members[0].name}</p>
-            </a>
-          </Link>
-          <Link href={'/members/' + members[1].id} key={members[1].id}>
-            <a className={styles.card}>
-              <h2>2</h2>
-              <p>{members[1].name}</p>
-            </a>
-          </Link>
-          <Link href={'/members/' + members[2].id} key={members[2].id}>
-            <a className={styles.card}>
-              <h2>3</h2>
-              <p>{members[2].name}</p>
-            </a>
-          </Link>
-          <Link href={'/members/' + members[3].id} key={members[3].id}>
-            <a className={styles.card}>
-              <h2>4</h2>
-              <p>{members[3].name}</p>
-            </a>
-          </Link>
-        </div>
+        <MemberList members={members} />
       </main>
       <footer className={styles.footer}></footer>
     </div>
