@@ -16,10 +16,8 @@ export default function Home2() {
         <li>
           <p>{member.email}</p>
         </li>
-        
       </ul>
       <p>{member.image}</p>
     </div>
-  
   );
 }
