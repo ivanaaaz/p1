@@ -1,4 +1,6 @@
-export const trailingComma = 'all';
-export const singleQuote = true;
-export const arrowParens = 'always';
-export const printWidth = 80;
+module.exports = {
+trailingComma: 'all',
+singleQuote: true,
+arrowParens: 'always',
+printWidth: 80,
+};

@@ -16,6 +16,7 @@ export const members = [
    // image: <Image src={photo1} alt="Photo of Pera" />
 
 
+   
 
   },
   {
