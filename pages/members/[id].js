@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { members } from '../../mocks';
-export default function Home2() {
+
+export default function MemberDetails() {
   const router = useRouter();
   const memberId = router.query.id;
   const member = members.find(({ id }) => id === memberId);
