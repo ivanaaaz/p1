@@ -13,7 +13,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="mt-20">
-        <h1 className="text-secondary-300 text-6xl text-center font-semibold px-16 py-16">Members</h1>
+        <h1 className="text-secondary-300 text-8xl text-center font-semibold px-16 py-16">Members</h1>
         <MemberList members={members} />
       </main>
       <footer></footer>
