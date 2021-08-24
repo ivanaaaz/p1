@@ -4,7 +4,7 @@ import '../../tailwind.config';
 
 const Member = ({ member }) => {
   return (
-    <li className="px-16 py-16 text-center border-gray-500 border-t-2">
+    <li className="px-16 py-16 text-center border-b border-gray-300">
       <Link href={'/members/' + member.id}>
         <a>
           <p>{member.name}</p>
@@ -16,7 +16,7 @@ const Member = ({ member }) => {
 
 const MemberList = ({ members }) => {
   return (
-    <ul className="text-gray-600">
+    <ul className="text-gray-600 bg-secondary-50 mt-20 mx-80 my-80 mb-40">
       {members.map((member) => (
         <Member key={member.id} member={member} />
       ))}
