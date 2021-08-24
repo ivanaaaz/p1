@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import styles from './index.module.css';
+import '../../tailwind.config';
+//import styles from './index.module.css';
 
 const Member = ({ member }) => {
   return (
-    <li className={styles.card}>
+    <li className="px-16 py-16 text-center border-gray-500 border-t-2">
       <Link href={'/members/' + member.id}>
         <a>
           <p>{member.name}</p>
@@ -15,7 +16,7 @@ const Member = ({ member }) => {
 
 const MemberList = ({ members }) => {
   return (
-    <ul className={styles.grid}>
+    <ul className="text-gray-600">
       {members.map((member) => (
         <Member key={member.id} member={member} />
       ))}
