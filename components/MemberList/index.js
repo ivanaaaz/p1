@@ -16,13 +16,9 @@ const Member = ({ member }) => {
 
 const MemberList = ({ members }) => {
   return (
-    <ul className="bg-secondary-50 mt-20 mx-80 my-80 mb-40 text-lg flex justify-center">
+    <ul className="bg-secondary-50 mt-20 mx-80 my-80 mb-40 text-lg">
       {members.map((member) => (
-        <Member
-          key={member.id}
-          member={member}
-          className="text-gray-600"
-        />
+        <Member key={member.id} member={member} />
       ))}
     </ul>
   );
