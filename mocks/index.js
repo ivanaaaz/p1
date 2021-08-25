@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const members = [
   {
     id: 'm1',
