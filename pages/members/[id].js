@@ -19,10 +19,33 @@ export default function MemberDetails() {
           <p>{member.email}</p>
         </li>
       </ul>
-      <p className="flex justify-center h-80 width-full object-cover mb-40 mt-10">
-        {/*eslint-disable-next-line*/}
-        <img src={member.image} alt="profile" />
-      </p>
     </div>
   );
 }
+
+/* <p className="flex justify-center h-80 width-full object-cover mb-40 mt-10">
+   //     {/*eslint-disable-next-line*/ //}
+//     <img src={member.image} alt="profile" />
+//   </p> */
+
+export async function getStaticPaths() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const mem = await res.json();
+
+  const paths = mem.map((member) => ({
+    params: { id: member.id },
+  }));
+
+  return { paths, fallback: false };
+}
+
+/*
+export async function getStaticProps({ params }) {
+  const res = await fetch(
+    'https://jsonplaceholder.typicode.com/users/${params.id}',
+  );
+  const data = await res.json();
+
+  return { props: { members: data } };
+}
+*/

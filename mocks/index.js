@@ -1,3 +1,4 @@
+/*
 import Image from 'next/image';
 
 export const members = [
@@ -27,3 +28,5 @@ export const members = [
     image: '/4.png',
   },
 ];
+
+*/

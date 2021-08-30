@@ -3,8 +3,21 @@ import React, { useState } from 'react';
 import { members } from '../mocks';
 import MemberList from '../components/MemberList';
 import '../tailwind.config';
+import '../pages/api/members/data.json';
+import '../pages/members/[id]';
 
-const Home = () => {
+const defaultEndPoint = 'https://jsonplaceholder.typicode.com/users';
+const endPoint =
+  'https://github.com/ivanaaaz/p1/blob/feature/api/pages/api/members/data.json';
+
+export async function getStaticProps() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await res.json();
+
+  return { props: { members: data } };
+}
+
+const Home = ({ members }) => {
   return (
     <div>
       <Head>
@@ -13,7 +26,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="mt-20">
-        <h1 className="text-secondary-300 text-8xl text-center font-semibold px-16 py-16">Members</h1>
+        <h1 className="text-secondary-300 text-8xl text-center font-semibold px-16 py-16">
+          Members
+        </h1>
         <MemberList members={members} />
       </main>
       <footer></footer>
