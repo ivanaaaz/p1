@@ -29,27 +29,34 @@ const Member = ({ member }) => {
 
 const MemberList = ({ members }) => {
   return (
-    <table className="text-xl m-10 md:m-20 lg:m-40 bg-red-50 lg:text-3xl md:text-2xl p-8 rounded-3xl divide-y divide-gray-300 shadow-xl text-gray-700">
-      <thead className="bg-gray-50">
-        {' '}
-        <tr>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Name
-          </th>
-        </tr>
-      </thead>
+    <div className="flex flex-col">
+      <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Name
+                  </th>
+                </tr>
+              </thead>
 
-      <tbody className="bg-white divide-y divide-gray-200">
-        <tr>
-          {members.map((member) => (
-            <Member key={member.id} member={member} />
-          ))}
-        </tr>
-      </tbody>
-    </table>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <tr>
+                  {members.map((member) => (
+                    <Member key={member.id} member={member} />
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
