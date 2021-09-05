@@ -57,6 +57,9 @@ const Table = ({ members }) => {
 
 const MemberList = ({ members }) => {
   const [searchText, setSearchText] = useState('');
+  const searchMembers = members.filter((member) =>
+    member.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
   return (
     <div>
       <div className="pb-2 mb-8 border-b-2">
@@ -70,7 +73,7 @@ const MemberList = ({ members }) => {
         />
       </div>
       <Card>
-        <Table members={members} />
+        <Table members={searchMembers} />
       </Card>
     </div>
   );
