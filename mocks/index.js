@@ -24,4 +24,34 @@ export const members = [
     email: 'zika@gmail.com',
     image: '/4.png',
   },
+  {
+    id: 'm5',
+    name: 'Zoran Zikic',
+    email: 'zoran@gmail.com',
+    image: '/4.png',
+  },
+  {
+    id: 'm5',
+    name: 'Bogdan Zikic',
+    email: 'bogdan@gmail.com',
+    image: '/4.png',
+  },
+  {
+    id: 'm6',
+    name: 'Dusan Zikic',
+    email: 'dusan@gmail.com',
+    image: '/4.png',
+  },
+  {
+    id: 'm7',
+    name: 'Danka Zikic',
+    email: 'zika@gmail.com',
+    image: '/4.png',
+  },
+  {
+    id: 'm8',
+    name: 'Ivana Zikic',
+    email: 'zika@gmail.com',
+    image: '/4.png',
+  },
 ];

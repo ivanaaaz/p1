@@ -3,11 +3,10 @@ import '../../tailwind.config';
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 bg-red-200 text-white font-semibold text-xl text-center pt-4 pb-4 ml-0 me-0 md:ml-20 md:mr-20 lg:ml-0 lg:mr-0 rounded-b">
+    <header className="sticky top-0 bg-blue-800 px-10 py-4 text-white text-lg shadow">
       <Link href="/">
         <a>Home</a>
       </Link>
-      <a className="border-l-2 pl-4 border-white mr-0 ml-4">About us</a>
     </header>
   );
 };
