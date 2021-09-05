@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import styles from './index.module.css';
+import '../../tailwind.config';
+
 const Navbar = () => {
   return (
-    <header>
+    <header className="sticky top-0 bg-blue-800 px-10 py-4 text-white text-lg shadow">
       <Link href="/">
-        <a className={styles.wrapper}>Home</a>
+        <a>Home</a>
       </Link>
     </header>
   );
