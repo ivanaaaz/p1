@@ -5,34 +5,39 @@ import Input from '../Input';
 
 const Member = ({ member }) => {
   return (
-    <td className="px-6 py-4 whitespace-nowrap">
-      <Link href={'/members/' + member.id}>
-        <a>
-          <div className="flex items-center">
-            <div className="flex-shrink-0 h-10 w-10">
-              {/*eslint-disable-next-line*/}
-              <img
-                className="h-10 w-10 rounded-full"
-                src={member.image}
-                alt=""
-              />
-            </div>
-            <div className="ml-4">
-              <div className="text-sm font-medium text-gray-900">
-                {member.name}
+    <>
+      <td className="px-6 py-4 whitespace-nowrap">
+        <Link href={'/members/' + member.id}>
+          <a>
+            <div className="flex items-center">
+              <div className="flex-shrink-0 h-10 w-10">
+                {/*eslint-disable-next-line*/}
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src={member.image}
+                  alt=""
+                />
               </div>
-              <div className="text-sm text-gray-500">{member.email}</div>
+              <div className="ml-4">
+                <div className="text-sm font-medium text-gray-900">
+                  {member.name}
+                </div>
+                <div className="text-sm text-gray-500">{member.email}</div>
+              </div>
             </div>
-          </div>
-        </a>
-      </Link>
-    </td>
+          </a>
+        </Link>
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap">
+        <div className="text-sm text-gray-900">{member.gender}</div>
+      </td>
+    </>
   );
 };
 
 const Table = ({ members }) => {
   return (
-    <table className="min-w-full divide-y divide-gray-200">
+    <table className=" min-w-full divide-y divide-gray-200 table-auto">
       <thead className="bg-gray-50">
         <tr>
           <th
@@ -40,6 +45,12 @@ const Table = ({ members }) => {
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
             Name
+          </th>
+          <th
+            scope="col"
+            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Gender
           </th>
         </tr>
       </thead>
