@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Card from '../Card';
 import Input from '../Input';
+import TH from '../TH';
 
 const Member = ({ member }) => {
   return (
@@ -40,18 +41,8 @@ const Table = ({ members }) => {
     <table className=" min-w-full divide-y divide-gray-200 table-auto">
       <thead className="bg-gray-50">
         <tr>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Name
-          </th>
-          <th
-            scope="col"
-            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Gender
-          </th>
+          <TH>Name</TH>
+          <TH>Gender</TH>
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
