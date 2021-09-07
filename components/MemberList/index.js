@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Card from '../Card';
 import Input from '../Input';
 import TH from '../TH';
+import TD from '../TD';
 
 const Member = ({ member }) => {
   return (
     <>
-      <td className="px-6 py-4 whitespace-nowrap">
+      <TD>
         <Link href={'/members/' + member.id}>
           <a>
             <div className="flex items-center">
@@ -28,10 +29,10 @@ const Member = ({ member }) => {
             </div>
           </a>
         </Link>
-      </td>
-      <td className="px-6 py-4 whitespace-nowrap">
+      </TD>
+      <TD>
         <div className="text-sm text-gray-900">{member.gender}</div>
-      </td>
+      </TD>
     </>
   );
 };
