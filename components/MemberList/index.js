@@ -4,6 +4,9 @@ import Card from '../Card';
 import Input from '../Input';
 import TH from '../TH';
 import TD from '../TD';
+import { GENDER } from '../../src/constants';
+import Select from '../Select/select';
+const ALL_OPTION = 'All';
 
 const Member = ({ member }) => {
   return (
@@ -60,9 +63,14 @@ const Table = ({ members }) => {
 
 const MemberList = ({ members }) => {
   const [searchText, setSearchText] = useState('');
-  const searchMembers = members.filter((member) =>
-    member.name.toLowerCase().includes(searchText.toLowerCase()),
-  );
+  const [selectedGender, setSelectedGender] = useState(ALL_OPTION);
+  const membersToDisplay = members.filter((member) => {
+    return (
+      member.name.toLowerCase().includes(searchText.toLowerCase()) &&
+      (selectedGender === ALL_OPTION ? true : member.gender === selectedGender)
+    );
+  });
+
   return (
     <div>
       <div className="pb-2 mb-8 border-b-2">
@@ -74,9 +82,27 @@ const MemberList = ({ members }) => {
             setSearchText(event.target.value);
           }}
         />
+
+        <Select
+          style={{ marginLeft: 8, marginRight: 2 + 'em' }}
+          type="select"
+          name="selectOption"
+          value={selectedGender}
+          onChange={(event) => {
+            setSelectedGender(event.target.value);
+          }}
+        >
+          <option value={ALL_OPTION}>All</option>
+          {Object.values(GENDER).map((gender) => (
+            <option key={gender} value={gender}>
+              {gender}
+            </option>
+          ))}
+        </Select>
       </div>
+
       <Card>
-        <Table members={searchMembers} />
+        <Table members={membersToDisplay} />
       </Card>
     </div>
   );
