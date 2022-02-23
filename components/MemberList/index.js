@@ -74,37 +74,31 @@ const MemberList = ({ members }) => {
   return (
     <div>
       <div className="pb-2 mb-8 border-b-2">
-        <tr>
-          <TH>
-            <Input
-              type="search"
-              name="searchInput"
-              value={searchText}
-              onChange={(event) => {
-                setSearchText(event.target.value);
-              }}
-            />
-          </TH>
+        <Input
+          type="search"
+          name="searchInput"
+          value={searchText}
+          onChange={(event) => {
+            setSearchText(event.target.value);
+          }}
+        />
 
-          <TH>
-            <Select
-              style={{ marginLeft: 8, marginRight: 2 + 'em' }}
-              type="select"
-              name="selectOption"
-              value={selectedGender}
-              onChange={(event) => {
-                setSelectedGender(event.target.value);
-              }}
-            >
-              <option value={ALL_OPTION}>All</option>
-              {Object.values(GENDER).map((gender) => (
-                <option key={gender} value={gender}>
-                  {gender}
-                </option>
-              ))}
-            </Select>
-          </TH>
-        </tr>
+        <Select
+          style={{ marginLeft: 8, marginRight: 2 + 'em' }}
+          type="select"
+          name="selectOption"
+          value={selectedGender}
+          onChange={(event) => {
+            setSelectedGender(event.target.value);
+          }}
+        >
+          <option value={ALL_OPTION}>All</option>
+          {Object.values(GENDER).map((gender) => (
+            <option key={gender} value={gender}>
+              {gender}
+            </option>
+          ))}
+        </Select>
       </div>
 
       <Card>
