@@ -1,9 +1,20 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
-import { members } from '../mocks';
+// import { members } from '../mocks';
 import MemberList from '../components/MemberList';
 
-const Home = () => {
+export const getStaticProps = async () => {
+
+  //const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const res = await fetch('http://localhost:3000/api/mem');
+  const data = await res.json();
+
+  return {
+    props: {mem: data}
+  }
+}
+ 
+const Home = ({mem}) => {
   return (
     <main>
       <Head>
@@ -13,7 +24,7 @@ const Home = () => {
       </Head>
       <main className="p-10">
         <h1 className="mb-4 text-2xl">Members</h1>
-        <MemberList members={members} />
+        <MemberList members={mem} />       
       </main>
       <footer></footer>
     </main>
