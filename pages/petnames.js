@@ -3,11 +3,20 @@ import Button from '../components/Button';
 const DEFAULT_NAME = 'BENI';
 import { useState } from 'react';
 import Confetti from '../components/Confetti';
-
+import React from 'react';
 
 const PetNames = () => {
-  const [defaultName, setPetName] = useState(DEFAULT_NAME);  
-  const names = ['beni', 'didi', 'niki', 'hugi', 'dzek', 'dzoni', 'koko', 'nini'];  
+  const [defaultName, setPetName] = useState(DEFAULT_NAME);
+  const names = [
+    'Beni',
+    'Didi',
+    'Niki',
+    'Hugi',
+    'Dzeki',
+    'Dzoni',
+    'Koko',
+    'Nini',
+  ];
 
   return (
     <main>
@@ -19,39 +28,51 @@ const PetNames = () => {
       <main className="p-10">
         <div className="grid grid-cols-2 divide-x justify-around w-screen h-screen">
           <div>
-            <h1 className="mb-4 text-4xl md:ml-20 text-center">Pet Names</h1>            
-            <div className="relative flex justify-start w-auto md:justify-between mt-20 mb-4" id="container">
-
-             
+            <h1 className="mb-4 text-4xl md:ml-20 text-center">Pet Names</h1>
+            <div
+              className="relative flex justify-start w-auto md:justify-between mt-20 mb-4"
+              id="container"
+            >
               <Button
                 type="button"
                 name="buttonPetName"
                 value={defaultName}
-                onClick={ () =>                  
+                onClick={() =>
                   setPetName(names[Math.floor(Math.random() * names.length)])
                 }
               >
                 Choose Name
-              </Button>             
+              </Button>
 
-              <div className='lg:mr-32 mr-36 ml-4 mt-2.5'>{defaultName}</div>              
-               
+              <table className="text-center inline-flex items-center justify-center px-4 py-4 rounded-md shadow-sm text-base font-light text-gray lg:mr-16 mr-28 ml-4 mt-2.5 bg-blue-100 divide-gray-200 w-64 h-4">
+                <tbody>
+                  <tr>{defaultName}</tr>
+                </tbody>
+              </table>
+
               {(() => {
-                if (defaultName=="BENI" || defaultName=="beni") {
-                  return (<Confetti>
-                            {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>                
-                            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_obhph3sh.json"  background="transparent"  speed="1"  style={{width: 200, height:200}}   loop  autoplay></lottie-player>   
-                          </Confetti>)
+                if (defaultName == 'BENI' || defaultName == 'Beni') {
+                  return (
+                    <Confetti>
+                      {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+                      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                      <lottie-player
+                        src="https://assets6.lottiefiles.com/packages/lf20_obhph3sh.json"
+                        background="transparent"
+                        speed="1"
+                        style={{ width: 200, height: 200 }}
+                        loop
+                        autoplay
+                      ></lottie-player>
+                    </Confetti>
+                  );
                 }
-              })()}           
-                    
-                                   
-            </div>          
-            
+              })()}
+            </div>
           </div>
           <div>
-            <div className="bg-none lg:w-4/6 lg:h-full md:w-40 md:h-1/2 md:ml-32 mt-20 md:bg-no-repeat md:opacity-40"
+            <div
+              className="bg-none lg:w-4/6 lg:h-full md:w-40 md:h-1/2 md:ml-32 mt-20 md:bg-no-repeat md:opacity-40"
               style={{
                 backgroundImage:
                   'url(' +
